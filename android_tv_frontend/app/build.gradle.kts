@@ -39,6 +39,13 @@ android {
     buildFeatures {
         viewBinding = true
     }
+
+    // Include the repository root-level /assets directory in the app's packaged assets
+    sourceSets {
+        getByName("main") {
+            assets.srcDirs("src/main/assets", "../../../assets")
+        }
+    }
 }
 
 dependencies {
